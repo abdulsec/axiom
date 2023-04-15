@@ -210,9 +210,6 @@
         "echo 'Installing gorgo'",
         "/bin/su -l op -c 'docker image build - < /home/op/lists/axiom-dockerfiles/gorgo/Dockerfile -t axiom/gorgo'",
 
-        "echo 'Installing gospider'",
-        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/jaeles-project/gospider@latest'",
-
         "echo 'Installing gowitness'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/sensepost/gowitness@latest'",
  
@@ -228,9 +225,6 @@
         "echo 'Installing hakrevdns'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/hakluke/hakrevdns@latest'",
 
-        "echo 'Installing httprobe'",
-        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/httprobe@latest'",
-
         "echo 'Installing httpx'",
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/httpx/cmd/httpx@latest'",
 
@@ -239,10 +233,6 @@
         
         "echo 'Installing ipcdn'",
         "/bin/su -l op -c 'docker image build - < /home/op/lists/axiom-dockerfiles/ipcdn/Dockerfile -t axiom/ipcdn'",
-
-        "echo 'Installing jaeles'",
-        "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/jaeles-project/jaeles@latest'",
-
         "echo 'Installing katana'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/projectdiscovery/katana/cmd/katana@latest'",
 
@@ -264,9 +254,6 @@
         "echo 'Installing medusa'",
         "apt install medusa -y -qq",
 
-        "echo 'Installing meg'",
-        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/meg@latest'",
-
         "echo 'Installing naabu'",
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest'",
 
@@ -276,9 +263,6 @@
 
         "echo 'Installing nuclei'",
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest && /home/op/go/bin/nuclei'",
-
-        "echo 'Installing OpenRedireX'",
-        "/bin/su -l op -c 'docker image build - < /home/op/lists/axiom-dockerfiles/openredirex/Dockerfile -t axiom/openredirex'",
 
         "echo 'Installing ParamSpider'",
         "/bin/su -l op -c 'git clone https://github.com/devanshbatham/ParamSpider.git /home/op/recon/ParamSpider && cd /home/op/recon/ParamSpider && pip3 install -r requirements.txt && cd'",
@@ -301,8 +285,6 @@
         "echo 'Installing s3scanner'",
         "/bin/su -l op -c 'pip3 install s3scanner'",
 
-        "echo 'Installing scrying'",
-        "wget -q -O /tmp/scrying.deb https://github.com/nccgroup/scrying/releases/download/v0.9.0-alpha.2/scrying_0.9.0-alpha.2_amd64.deb && apt install /tmp/scrying.deb -y -qq && apt install xvfb -y -qq",
 
         "echo 'Installing shuffledns'",
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest'",
@@ -310,43 +292,17 @@
         "echo 'Installing sqlmap'",
         "git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git /home/op/recon/sqlmap-dev",
 
-        "echo 'Installing subjack'",
-        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/haccer/subjack@latest'",
-
         "echo 'Installing subfinder'",
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest'",
-
-        "echo 'Installing subjs'",
-        "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install -v github.com/lc/subjs@latest'",
-
-        "echo 'Installing testssl'",
-        "git clone --depth 1 https://github.com/drwetter/testssl.sh.git /home/op/recon/testssl.sh",
- 
-        "echo 'Installing thc-hydra'",
-        "wget  -q -O /tmp/libgcrypt11-dev_1.5.4-3+really1.8.1-4ubuntu1.2_amd64.deb http://security.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt11-dev_1.5.4-3+really1.8.1-4ubuntu1.2_amd64.deb && sudo apt install -y /tmp/libgcrypt11-dev_1.5.4-3+really1.8.1-4ubuntu1.2_amd64.deb -qq && rm /tmp/libgcrypt11-dev_1.5.4-3+really1.8.1-4ubuntu1.2_amd64.deb",
-        "apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird-dev libmemcached-dev libgpg-error-dev libgcrypt20-dev -y -qq",
-        "git clone https://github.com/vanhauser-thc/thc-hydra.git /home/op/recon/thc-hydra && cd /home/op/recon/thc-hydra && ./configure && make -s && make -s install && cd",
-        
+                
         "echo 'Installing tlsx'",
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest'",
-        
-        "echo 'Installing trufflehog'",
-        "/bin/su -l op -c 'docker image build - < /home/op/lists/axiom-dockerfiles/trufflehog/Dockerfile -t axiom/trufflehog'",
         
         "echo 'Installing unimap'",
         "wget -q -O /tmp/unimap https://github.com/Edu4rdSHL/unimap/releases/download/0.5.1/unimap-linux && mv /tmp/unimap /usr/bin/unimap && chmod +x /usr/bin/unimap",
 
-        "echo 'Installing wafw00f'",
-        "cd /tmp && git clone https://github.com/EnableSecurity/wafw00f && cd wafw00f && sudo python3 setup.py install",
-
         "echo 'Installing waybackurls'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/waybackurls@latest'",
-
-        "echo 'Installing webscreenshot'",
-        "/bin/su -l op -c 'pip3 install webscreenshot'",
-
-        "echo 'Installing wpscan'",
-        "gem install wpscan",
         
         "echo 'Removing unneeded Docker images'",
         "/bin/su -l op -c 'docker image prune -f'",
